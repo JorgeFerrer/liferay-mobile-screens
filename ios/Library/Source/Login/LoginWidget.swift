@@ -28,8 +28,9 @@ import UIKit
 
     let authMethods: Dictionary<String, AuthCall> = [
         AuthType.Email.toRaw(): authCallWithEmail,
-        AuthType.Screenname.toRaw(): authCallWithScreenname]
-    
+		AuthType.Screenname.toRaw(): authCallWithScreenname,
+		AuthType.UserId.toRaw(): authCallWithUserId]
+
     var authMethod: AuthCall?
     
 	/*
@@ -120,6 +121,18 @@ func authCallWithScreenname(name:String, password:String, service:LRUserService_
 	var outError: NSError?
 
 	service.getUserByScreenNameWithCompanyId(companyId, screenName:name, error: &outError)
+
+	if let error = outError {
+		onError(error)
+	}
+}
+
+func authCallWithUserId(userId:String, password:String, service:LRUserService_v62, onError:(NSError)->()) {
+	let uid: CLongLong = (userId.toInt()! as NSNumber).longLongValue
+
+	var outError: NSError?
+
+	service.getUserByIdWithUserId(uid, error: &outError)
 
 	if let error = outError {
 		onError(error)
