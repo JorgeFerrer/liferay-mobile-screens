@@ -15,8 +15,8 @@ import UIKit
 
 class ViewController: UIViewController, LoginWidgetDelegate {
 
-	@IBOutlet var widget: BaseWidget!
-    
+	@IBOutlet var loginWidget: LoginWidget!
+
     
     // UIViewController METHODS
     
@@ -25,9 +25,7 @@ class ViewController: UIViewController, LoginWidgetDelegate {
 		super.viewDidLoad()
 
 		// WORKAROUND!
-		// Outlet assignment in IB doesn't work!!
-		let loginWidget = widget as LoginWidget
-
+		// Delegate assignment in IB doesn't work!!
 		loginWidget.delegate = self
         loginWidget.setAuthType(AuthType.Email)
 
