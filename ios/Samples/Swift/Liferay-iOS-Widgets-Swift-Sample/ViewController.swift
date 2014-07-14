@@ -13,10 +13,11 @@
 */
 import UIKit
 
-class ViewController: UIViewController, LoginWidgetDelegate {
+class ViewController: UIViewController, LoginWidgetDelegate, ForgotPasswordWidgetDelegate {
 
 	@IBOutlet var widget: BaseWidget!
-    
+	@IBOutlet var forgotWidget: ForgotPasswordWidget!
+
     
     // UIViewController METHODS
 	override func viewDidLoad() {
@@ -36,6 +37,9 @@ class ViewController: UIViewController, LoginWidgetDelegate {
 		}
 		else {
 			loginWidget.becomeFirstResponder()
+
+		forgotWidget.delegate = self;
+		forgotWidget.setAuthType(AuthType.ScreenName)
 		}
 	}
 
@@ -63,6 +67,14 @@ class ViewController: UIViewController, LoginWidgetDelegate {
 		print("Saved loaded for server " + session.server)
 	}
 
+	func onForgotPasswordError(error: NSError)  {
+		println("Error -> " + error.description)
+
+	}
+
+	func onForgotPasswordResponse(attributes: Dictionary<String, Any!>)  {
+		NSLog("Forgot %@", attributes)
+	}
 
 
 }
