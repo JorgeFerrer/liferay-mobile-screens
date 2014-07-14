@@ -13,6 +13,7 @@
 		8868AFCE19656B0500FD5214 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8868AFCD19656B0500FD5214 /* ViewController.swift */; };
 		8868AFD119656B0500FD5214 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8868AFCF19656B0500FD5214 /* Main.storyboard */; };
 		8868AFD319656B0500FD5214 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8868AFD219656B0500FD5214 /* Images.xcassets */; };
+		8873462F1973D49400CA439B /* LRMobilewidgetsService_v6201.m in Sources */ = {isa = PBXBuildFile; fileRef = 8873462E1973D49400CA439B /* LRMobilewidgetsService_v6201.m */; };
 		88832F9819656B3F00E3DF9F /* BaseWidget+progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88832F8919656B3F00E3DF9F /* BaseWidget+progress.swift */; };
 		88832F9919656B3F00E3DF9F /* BaseWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88832F8A19656B3F00E3DF9F /* BaseWidget.swift */; };
 		88832F9A19656B3F00E3DF9F /* BaseWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88832F8B19656B3F00E3DF9F /* BaseWidgetView.swift */; };
@@ -34,6 +35,8 @@
 		8868AFCD19656B0500FD5214 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8868AFD019656B0500FD5214 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8868AFD219656B0500FD5214 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8873462D1973D49400CA439B /* LRMobilewidgetsService_v6201.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRMobilewidgetsService_v6201.h; sourceTree = "<group>"; };
+		8873462E1973D49400CA439B /* LRMobilewidgetsService_v6201.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRMobilewidgetsService_v6201.m; sourceTree = "<group>"; };
 		88832F8919656B3F00E3DF9F /* BaseWidget+progress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseWidget+progress.swift"; sourceTree = "<group>"; };
 		88832F8A19656B3F00E3DF9F /* BaseWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWidget.swift; sourceTree = "<group>"; };
 		88832F8B19656B3F00E3DF9F /* BaseWidgetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWidgetView.swift; sourceTree = "<group>"; };
@@ -106,9 +109,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8873462C1973D49400CA439B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8873462D1973D49400CA439B /* LRMobilewidgetsService_v6201.h */,
+				8873462E1973D49400CA439B /* LRMobilewidgetsService_v6201.m */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		88832F8719656B3F00E3DF9F /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				8873462C1973D49400CA439B /* Services */,
 				88832F8819656B3F00E3DF9F /* Base */,
 				88832F9219656B3F00E3DF9F /* Login */,
 				88832F9619656B3F00E3DF9F /* Util */,
@@ -272,6 +285,7 @@
 				88832F9819656B3F00E3DF9F /* BaseWidget+progress.swift in Sources */,
 				88832F9F19656B3F00E3DF9F /* LoginView.swift in Sources */,
 				88832F9A19656B3F00E3DF9F /* BaseWidgetView.swift in Sources */,
+				8873462F1973D49400CA439B /* LRMobilewidgetsService_v6201.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
