@@ -29,7 +29,7 @@ class ViewController: UIViewController, LoginWidgetDelegate {
 		let loginWidget = widget as LoginWidget
 
 		loginWidget.delegate = self
-        loginWidget.setAuthType(AuthType.Email)
+        loginWidget.setAuthType(AuthType.ScreenName)
 
 		loginWidget.becomeFirstResponder()
 	}
