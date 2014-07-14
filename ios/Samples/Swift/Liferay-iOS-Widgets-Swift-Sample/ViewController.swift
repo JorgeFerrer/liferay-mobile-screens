@@ -13,10 +13,11 @@
 */
 import UIKit
 
-class ViewController: UIViewController, LoginWidgetDelegate {
+class ViewController: UIViewController, LoginWidgetDelegate, ForgotPasswordWidgetDelegate {
 
 	@IBOutlet var widget: BaseWidget!
-    
+	@IBOutlet var forgotWidget: ForgotPasswordWidget!
+
     
     // UIViewController METHODS
     
@@ -29,9 +30,12 @@ class ViewController: UIViewController, LoginWidgetDelegate {
 		let loginWidget = widget as LoginWidget
 
 		loginWidget.delegate = self
-        loginWidget.setAuthType(AuthType.Email)
+        loginWidget.setAuthType(AuthType.ScreenName)
 
 		loginWidget.becomeFirstResponder()
+
+		forgotWidget.delegate = self;
+		forgotWidget.setAuthType(AuthType.ScreenName)
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -50,6 +54,16 @@ class ViewController: UIViewController, LoginWidgetDelegate {
 	func onLoginResponse(attributes: Dictionary<String, Any!>)  {
 		NSLog("Login %@", attributes)
 	}
+
+	func onForgotPasswordError(error: NSError)  {
+		println("Error -> " + error.description)
+
+	}
+
+	func onForgotPasswordResponse(attributes: Dictionary<String, Any!>)  {
+		NSLog("Forgot %@", attributes)
+	}
+
 
 }
 

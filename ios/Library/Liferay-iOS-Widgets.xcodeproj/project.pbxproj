@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		2C2DF42D7FA747E4B953573C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FEA555EA8DC0458CA74C4ACE /* libPods.a */; };
+		8852500E19747C3800651DEE /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8852500B19747C3800651DEE /* ForgotPasswordView.swift */; };
+		8852500F19747C3800651DEE /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8852500B19747C3800651DEE /* ForgotPasswordView.swift */; };
+		8852501019747C3800651DEE /* ForgotPasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8852500C19747C3800651DEE /* ForgotPasswordView.xib */; };
+		8852501119747C3800651DEE /* ForgotPasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8852500C19747C3800651DEE /* ForgotPasswordView.xib */; };
+		8852501219747C3800651DEE /* ForgotPasswordWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8852500D19747C3800651DEE /* ForgotPasswordWidget.swift */; };
+		8852501319747C3800651DEE /* ForgotPasswordWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8852500D19747C3800651DEE /* ForgotPasswordWidget.swift */; };
+		8873462A1973D29E00CA439B /* LRMobilewidgetsService_v6201.m in Sources */ = {isa = PBXBuildFile; fileRef = 887346291973D29E00CA439B /* LRMobilewidgetsService_v6201.m */; };
+		8873462B1973D29E00CA439B /* LRMobilewidgetsService_v6201.m in Sources */ = {isa = PBXBuildFile; fileRef = 887346291973D29E00CA439B /* LRMobilewidgetsService_v6201.m */; };
 		888FAFA8196AE8C200057B26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FAFA6196AE8C200057B26 /* AppDelegate.swift */; };
 		888FAFA9196AE8C200057B26 /* AppInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 888FAFA7196AE8C200057B26 /* AppInfo.plist */; };
 		888FAFAB196AE8EF00057B26 /* TestsInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 888FAFAA196AE8EF00057B26 /* TestsInfo.plist */; };
@@ -76,6 +84,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8852500B19747C3800651DEE /* ForgotPasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		8852500C19747C3800651DEE /* ForgotPasswordView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgotPasswordView.xib; sourceTree = "<group>"; };
+		8852500D19747C3800651DEE /* ForgotPasswordWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordWidget.swift; sourceTree = "<group>"; };
+		887346281973D29E00CA439B /* LRMobilewidgetsService_v6201.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRMobilewidgetsService_v6201.h; sourceTree = "<group>"; };
+		887346291973D29E00CA439B /* LRMobilewidgetsService_v6201.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRMobilewidgetsService_v6201.m; sourceTree = "<group>"; };
 		888FAFA6196AE8C200057B26 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Tests/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		888FAFA7196AE8C200057B26 /* AppInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppInfo.plist; path = Tests/AppInfo.plist; sourceTree = SOURCE_ROOT; };
 		888FAFAA196AE8EF00057B26 /* TestsInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TestsInfo.plist; path = ../Tests/TestsInfo.plist; sourceTree = "<group>"; };
@@ -123,6 +136,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8852500A19747C3800651DEE /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				8852500C19747C3800651DEE /* ForgotPasswordView.xib */,
+				8852500B19747C3800651DEE /* ForgotPasswordView.swift */,
+				8852500D19747C3800651DEE /* ForgotPasswordWidget.swift */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		8873460E1973CE4D00CA439B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				887346281973D29E00CA439B /* LRMobilewidgetsService_v6201.h */,
+				887346291973D29E00CA439B /* LRMobilewidgetsService_v6201.m */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		889CA4BB19655F4B00664504 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +172,7 @@
 				889CA4C219655F4B00664504 /* LoginView.swift */,
 				889CA4C319655F4B00664504 /* LoginView.xib */,
 				889CA4C419655F4B00664504 /* LoginWidget.swift */,
+				8852500A19747C3800651DEE /* ForgotPassword */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -184,6 +217,7 @@
 		88FE74D619655E1B003A7CE5 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				8873460E1973CE4D00CA439B /* Services */,
 				889CA4BB19655F4B00664504 /* Base */,
 				889CA4C119655F4B00664504 /* Login */,
 				889CA4C519655F4B00664504 /* Util */,
@@ -291,6 +325,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8852501119747C3800651DEE /* ForgotPasswordView.xib in Resources */,
 				888FAFAB196AE8EF00057B26 /* TestsInfo.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,6 +336,7 @@
 			files = (
 				888FAFA9196AE8C200057B26 /* AppInfo.plist in Resources */,
 				889CA4CC19655F4B00664504 /* LoginView.xib in Resources */,
+				8852501019747C3800651DEE /* ForgotPasswordView.xib in Resources */,
 				88AEA25D19657C3100CD130B /* liferay-context-sample.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,6 +382,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				88EA610419656751005F722C /* Liferay_iOS_Widgets_Tests.swift in Sources */,
+				8852501319747C3800651DEE /* ForgotPasswordWidget.swift in Sources */,
+				8852500F19747C3800651DEE /* ForgotPasswordView.swift in Sources */,
+				8873462B1973D29E00CA439B /* LRMobilewidgetsService_v6201.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,12 +394,15 @@
 			files = (
 				889CA4CE19655F4B00664504 /* nameOfClass.swift in Sources */,
 				889CA4CD19655F4B00664504 /* LoginWidget.swift in Sources */,
+				8852501219747C3800651DEE /* ForgotPasswordWidget.swift in Sources */,
 				888FAFA8196AE8C200057B26 /* AppDelegate.swift in Sources */,
 				889CA4CB19655F4B00664504 /* LoginView.swift in Sources */,
 				889CA4C819655F4B00664504 /* BaseWidget.swift in Sources */,
 				889CA4C919655F4B00664504 /* BaseWidgetView.swift in Sources */,
 				889CA4CA19655F4B00664504 /* LiferayContext.swift in Sources */,
 				889CA4C719655F4B00664504 /* BaseWidget+progress.swift in Sources */,
+				8852500E19747C3800651DEE /* ForgotPasswordView.swift in Sources */,
+				8873462A1973D29E00CA439B /* LRMobilewidgetsService_v6201.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +452,7 @@
 			baseConfigurationReference = 88911B0A196AE41100E2E2A3 /* Pods.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Liferay-iOS-Widgets-Dummy.app/Liferay-iOS-Widgets-Dummy";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -422,6 +465,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/Source/liferay-ios-widgets.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Debug;
@@ -431,6 +476,7 @@
 			baseConfigurationReference = 88911B0A196AE41100E2E2A3 /* Pods.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Liferay-iOS-Widgets-Dummy.app/Liferay-iOS-Widgets-Dummy";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -439,6 +485,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/Source/liferay-ios-widgets.h";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;

@@ -24,14 +24,14 @@ import UIKit
 
     @IBOutlet var delegate: LoginWidgetDelegate?
     
-	typealias AuthCall = (String, String, LRUserService_v62, (NSError)->()) -> (Void)
+	typealias AuthClosureType = (String, String, LRUserService_v62, (NSError)->()) -> (Void)
 
-    let authMethods: Dictionary<String, AuthCall> = [
-        AuthType.Email.toRaw(): authCallWithEmail,
-        AuthType.Screenname.toRaw(): authCallWithScreenname]
-    
-    var authMethod: AuthCall?
-    
+    let authClosures = [
+        AuthType.Email.toRaw(): authWithEmail,
+        AuthType.ScreenName.toRaw(): authWithScreenName]
+
+    var authClosure: AuthClosureType?
+
 	/*
 	WORKAROUND!
 	XCode crashes with "swift_unknownWeakLoadStrong" error
@@ -47,7 +47,7 @@ import UIKit
     func setAuthType(authType:AuthType) {
         loginView().setAuthType(authType.toRaw())
         
-        authMethod = authMethods[authType.toRaw()]
+        authClosure = authClosures[authType.toRaw()]
     }
 
     
@@ -61,29 +61,28 @@ import UIKit
 	}
 
 	override func onCustomAction(actionName: String, sender: UIControl) {
-		if actionName == "login-action" {
-			sendLoginWithUsername(loginView().usernameField.text, password:loginView().passwordField.text)
-		}
+		sendLoginWithUsername(loginView().usernameField.text, password:loginView().passwordField.text)
 	}
 
     override func onServerError(error: NSError) {
-        delegate?.onLoginError(error)
-        LiferayContext.instance.clearSession()
-        hideHUDWithMessage("Error signing in!", details: nil)
+		delegate?.onLoginError(error)
+
+		LiferayContext.instance.clearSession()
+
+		hideHUDWithMessage("Error signing in!", details: nil)
     }
-    
+
     override func onServerResult(result: AnyObject!) {
-        if let dict = result as? Dictionary<String, Any!> {
-            delegate?.onLoginResponse(dict)
-        }
-        
-        hideHUDWithMessage("Sign in completed", details: nil)
+		if let dict = result as? Dictionary<String, Any!> {
+			delegate?.onLoginResponse(dict)
+		}
+
+		hideHUDWithMessage("Sign in completed", details: nil)
     }
     
 
-    // PRIVATE METHDOS
-    
-    
+    // PRIVATE METHODS
+
 	func loginView() -> LoginView {
 		return widgetView as LoginView
 	}
@@ -94,16 +93,14 @@ import UIKit
 		let session = LiferayContext.instance.createSession(username, password: password)
 		session.callback = self
 
-		authMethod!(username, password, LRUserService_v62(session: session)) {error in
+		authClosure!(username, password, LRUserService_v62(session: session)) {error in
 			self.onFailure(error)
 		}
 	}
-
-
 }
 
-func authCallWithEmail(email:String, password:String, service:LRUserService_v62, onError:(NSError)->()) {
-	let companyId: CLongLong = (LiferayContext.instance.companyId as NSNumber).longLongValue
+func authWithEmail(email:String, password:String, service:LRUserService_v62, onError:(NSError)->()) {
+	let companyId = (LiferayContext.instance.companyId as NSNumber).longLongValue
 
 	var outError: NSError?
 
@@ -114,8 +111,8 @@ func authCallWithEmail(email:String, password:String, service:LRUserService_v62,
 	}
 }
 
-func authCallWithScreenname(name:String, password:String, service:LRUserService_v62, onError:(NSError)->()) {
-	let companyId: CLongLong = (LiferayContext.instance.companyId as NSNumber).longLongValue
+func authWithScreenName(name:String, password:String, service:LRUserService_v62, onError:(NSError)->()) {
+	let companyId = (LiferayContext.instance.companyId as NSNumber).longLongValue
 
 	var outError: NSError?
 
@@ -125,3 +122,4 @@ func authCallWithScreenname(name:String, password:String, service:LRUserService_
 		onError(error)
 	}
 }
+
