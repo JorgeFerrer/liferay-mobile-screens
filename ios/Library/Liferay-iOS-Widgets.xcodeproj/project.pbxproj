@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		2C2DF42D7FA747E4B953573C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FEA555EA8DC0458CA74C4ACE /* libPods.a */; };
+		8827E30719759F28004977A0 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8827E30419759F28004977A0 /* ForgotPasswordView.swift */; };
+		8827E30819759F28004977A0 /* ForgotPasswordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8827E30519759F28004977A0 /* ForgotPasswordView.xib */; };
+		8827E30919759F28004977A0 /* ForgotPasswordWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8827E30619759F28004977A0 /* ForgotPasswordWidget.swift */; };
+		8827E30D19759F3C004977A0 /* LRMobilewidgetsService_v6201.m in Sources */ = {isa = PBXBuildFile; fileRef = 8827E30C19759F3C004977A0 /* LRMobilewidgetsService_v6201.m */; };
+		8827E30E19759F3C004977A0 /* LRMobilewidgetsService_v6201.m in Sources */ = {isa = PBXBuildFile; fileRef = 8827E30C19759F3C004977A0 /* LRMobilewidgetsService_v6201.m */; };
 		888FAFA8196AE8C200057B26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888FAFA6196AE8C200057B26 /* AppDelegate.swift */; };
 		888FAFA9196AE8C200057B26 /* AppInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 888FAFA7196AE8C200057B26 /* AppInfo.plist */; };
 		888FAFAB196AE8EF00057B26 /* TestsInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 888FAFAA196AE8EF00057B26 /* TestsInfo.plist */; };
@@ -79,6 +84,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8827E30419759F28004977A0 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		8827E30519759F28004977A0 /* ForgotPasswordView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgotPasswordView.xib; sourceTree = "<group>"; };
+		8827E30619759F28004977A0 /* ForgotPasswordWidget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordWidget.swift; sourceTree = "<group>"; };
+		8827E30B19759F3C004977A0 /* LRMobilewidgetsService_v6201.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRMobilewidgetsService_v6201.h; sourceTree = "<group>"; };
+		8827E30C19759F3C004977A0 /* LRMobilewidgetsService_v6201.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRMobilewidgetsService_v6201.m; sourceTree = "<group>"; };
 		888FAFA6196AE8C200057B26 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Tests/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		888FAFA7196AE8C200057B26 /* AppInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppInfo.plist; path = Tests/AppInfo.plist; sourceTree = SOURCE_ROOT; };
 		888FAFAA196AE8EF00057B26 /* TestsInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TestsInfo.plist; path = ../Tests/TestsInfo.plist; sourceTree = "<group>"; };
@@ -127,6 +137,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8827E30319759F28004977A0 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				8827E30419759F28004977A0 /* ForgotPasswordView.swift */,
+				8827E30519759F28004977A0 /* ForgotPasswordView.xib */,
+				8827E30619759F28004977A0 /* ForgotPasswordWidget.swift */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		8827E30A19759F3C004977A0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8827E30B19759F3C004977A0 /* LRMobilewidgetsService_v6201.h */,
+				8827E30C19759F3C004977A0 /* LRMobilewidgetsService_v6201.m */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		889CA4BB19655F4B00664504 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +170,7 @@
 		889CA4C119655F4B00664504 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				8827E30319759F28004977A0 /* ForgotPassword */,
 				889CA4C219655F4B00664504 /* LoginView.swift */,
 				889CA4C319655F4B00664504 /* LoginView.xib */,
 				889CA4C419655F4B00664504 /* LoginWidget.swift */,
@@ -189,6 +219,7 @@
 		88FE74D619655E1B003A7CE5 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				8827E30A19759F3C004977A0 /* Services */,
 				889CA4BB19655F4B00664504 /* Base */,
 				889CA4C119655F4B00664504 /* Login */,
 				889CA4C519655F4B00664504 /* Util */,
@@ -306,6 +337,7 @@
 			files = (
 				888FAFA9196AE8C200057B26 /* AppInfo.plist in Resources */,
 				889CA4CC19655F4B00664504 /* LoginView.xib in Resources */,
+				8827E30819759F28004977A0 /* ForgotPasswordView.xib in Resources */,
 				88AEA25D19657C3100CD130B /* liferay-context-sample.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8895737C196C3CDA00258033 /* LRSession+storage.swift in Sources */,
+				8827E30E19759F3C004977A0 /* LRMobilewidgetsService_v6201.m in Sources */,
 				88D99C32196C42B30090F236 /* LRSession_storage_Tests.swift in Sources */,
 				999BC6981975422900A9B0D8 /* LiferayContext.swift in Sources */,
 			);
@@ -362,12 +395,15 @@
 			files = (
 				889CA4CE19655F4B00664504 /* nameOfClass.swift in Sources */,
 				889CA4CD19655F4B00664504 /* LoginWidget.swift in Sources */,
+				8827E30919759F28004977A0 /* ForgotPasswordWidget.swift in Sources */,
 				888FAFA8196AE8C200057B26 /* AppDelegate.swift in Sources */,
 				889CA4CB19655F4B00664504 /* LoginView.swift in Sources */,
+				8827E30D19759F3C004977A0 /* LRMobilewidgetsService_v6201.m in Sources */,
 				889CA4C819655F4B00664504 /* BaseWidget.swift in Sources */,
 				889CA4C919655F4B00664504 /* BaseWidgetView.swift in Sources */,
 				889CA4CA19655F4B00664504 /* LiferayContext.swift in Sources */,
 				8895737B196C3CDA00258033 /* LRSession+storage.swift in Sources */,
+				8827E30719759F28004977A0 /* ForgotPasswordView.swift in Sources */,
 				889CA4C719655F4B00664504 /* BaseWidget+progress.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

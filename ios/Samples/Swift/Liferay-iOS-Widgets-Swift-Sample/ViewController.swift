@@ -29,18 +29,17 @@ class ViewController: UIViewController, LoginWidgetDelegate, ForgotPasswordWidge
 		// Outlet assignment in IB doesn't work!!
 		loginWidget.delegate = self
 
-		loginWidget.setAuthType(AuthType.Screenname)
-
+		loginWidget.setAuthType(AuthType.ScreenName)
 
 		if LoginWidget.storedSession() {
 			loginWidget.hidden = true
 		}
 		else {
 			loginWidget.becomeFirstResponder()
+		}
 
 		forgotWidget.delegate = self;
 		forgotWidget.setAuthType(AuthType.ScreenName)
-		}
 	}
 
 	override func didReceiveMemoryWarning() {
