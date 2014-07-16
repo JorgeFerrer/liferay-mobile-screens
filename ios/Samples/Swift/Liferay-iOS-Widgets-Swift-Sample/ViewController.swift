@@ -13,25 +13,33 @@
 */
 import UIKit
 
-class ViewController: UIViewController, LoginWidgetDelegate {
+class ViewController: UIViewController, LoginWidgetDelegate, ForgotPasswordWidgetDelegate {
 
 	@IBOutlet var widget: BaseWidget!
-    
+	@IBOutlet var forgotWidget: ForgotPasswordWidget!
+
     
     // UIViewController METHODS
-    
-    
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		// WORKAROUND!
-		// Outlet assignment in IB doesn't work!!
 		let loginWidget = widget as LoginWidget
 
+		// WORKAROUND!
+		// Outlet assignment in IB doesn't work!!
 		loginWidget.delegate = self
-        loginWidget.setAuthType(AuthType.Email)
 
-		loginWidget.becomeFirstResponder()
+		loginWidget.setAuthType(AuthType.ScreenName)
+
+		if LoginWidget.storedSession() {
+			loginWidget.hidden = true
+		}
+		else {
+			loginWidget.becomeFirstResponder()
+		}
+
+		forgotWidget.delegate = self;
+		forgotWidget.setAuthType(AuthType.ScreenName)
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -44,12 +52,29 @@ class ViewController: UIViewController, LoginWidgetDelegate {
     
 	func onLoginError(error: NSError)  {
 		println("Error -> " + error.description)
-
 	}
 
-	func onLoginResponse(attributes: Dictionary<String, Any!>)  {
+	func onLoginResponse(attributes: [String:AnyObject!])  {
 		NSLog("Login %@", attributes)
 	}
+
+	func onCredentialsSaved(session:LRSession) {
+		print("Saved credentials for server " + session.server)
+	}
+
+	func onCredentialsLoaded(session:LRSession) {
+		print("Saved loaded for server " + session.server)
+	}
+
+	func onForgotPasswordError(error: NSError)  {
+		println("Error -> " + error.description)
+
+	}
+
+	func onForgotPasswordResponse(attributes: Dictionary<String, Any!>)  {
+		NSLog("Forgot %@", attributes)
+	}
+
 
 }
 

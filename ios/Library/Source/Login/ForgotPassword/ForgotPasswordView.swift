@@ -13,41 +13,26 @@
 */
 import UIKit
 
-enum AuthType: String {
-	case Email = "Email"
-	case ScreenName = "Screen name"
-}
-
-class LoginView: BaseWidgetView, UITextFieldDelegate {
+class ForgotPasswordView: BaseWidgetView, UITextFieldDelegate {
 
 	@IBOutlet var usernameLabel: UILabel
 	@IBOutlet var usernameField: UITextField
-	@IBOutlet var passwordField: UITextField
-	@IBOutlet var rememberSwitch: UISwitch
-	@IBOutlet var loginButton: UIButton
-
-	var shouldRememberCredentials: Bool {
-		return rememberSwitch.on
-	}
+	@IBOutlet var requestButton: UIButton
 
 	func setAuthType(authType: String) {
 		usernameLabel.text = authType
 
-		switch authType {
+        switch authType {
 		case AuthType.Email.toRaw():
 			usernameField.keyboardType = UIKeyboardType.EmailAddress
 		case AuthType.ScreenName.toRaw():
 			usernameField.keyboardType = UIKeyboardType.ASCIICapable
-
-			let username = usernameField.text as NSString
-			if username.containsString("@") {
-				usernameField.text = username.componentsSeparatedByString("@")[0] as String
-			}
 		default:
 			break
 		}
 	}
-    
+
+
 	// BaseWidgetView METHODS
 
 
@@ -60,15 +45,9 @@ class LoginView: BaseWidgetView, UITextFieldDelegate {
 
 
 	func textFieldShouldReturn(textField: UITextField!) -> Bool {
-		if textField == usernameField {
-			textField.resignFirstResponder()
-			passwordField.becomeFirstResponder()
-		}
-		else if textField == passwordField {
-			textField.resignFirstResponder()
-			loginButton.sendActionsForControlEvents(UIControlEvents.TouchUpInside)
+		textField.resignFirstResponder()
 
-		}
+		requestButton.sendActionsForControlEvents(UIControlEvents.TouchUpInside)
 
 		return true
 	}
